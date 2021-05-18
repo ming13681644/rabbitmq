@@ -8,6 +8,7 @@ import org.springframework.amqp.rabbit.support.CorrelationData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.Date;
 @Component
 public class RabbitOrderSender {
@@ -15,7 +16,7 @@ public class RabbitOrderSender {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @Autowired
+    @Resource
     private BrokerMessageLogMapper brokerMessageLogMapper;
 
     //回调函数: confirm确认
